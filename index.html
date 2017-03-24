@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HANGMAN</title>
+
+  <!-- Added link to the jQuery library -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <!-- Added a link to Bootstrap-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="">
+
+    <h1 class="text-center">Let's Play Hangman!!</h1>
+
+    <div class="text-center">
+
+      
+
+    </div>
+			<div class="row justify-content-center"  style="height: 60px; border:solid 2px;">
+					<div class="col-lg-2 text-center"> here's left side </div>
+					<div class="col-lg-8 text-center">
+						<!-- Here we have our button for generating random numbers (#random-button) -->
+					     <button id="random-button" class="btn btn-primary btn-lg" onclick="randomizer()"><span class="glyphicon glyphicon-hand-down"></span></button>
+					</div>
+					<div class="col-lg-2 text-center"> here's right side   </div>
+
+			</div>
+
+<div class="row" style="height: 60px; border:solid 2px;">
+					<div class="col-lg-2 text-center"> here's left side </div>
+					<div class="col-lg-8 text-center">  
+						
+						<div id="vurds" style="border: solid 1px red;"><span id="wordLines">LINES FOR WORD GO HERE</span></div>
+
+					</div>
+					<div class="col-lg-2 text-center"> here's right side   </div>
+
+			</div>
+
+
+			<div class="row navbar-fixed-bottom">
+					
+					<div class="col-lg-2 text-center"> here's left side </div>
+					<div class="col-lg-8 text-center"> FOOTER </div>
+					<div class="col-lg-2 text-center"> here's right side   </div>
+
+			</div>
+  </div>
+
+  <script>
+
+
+
+var wordy = {
+	justWords: ["phosphorous", "abjure", "anachronistic", "cupidity", "demagogue", "embezzlement", "interlocutor", "penurious", "pertinacious", "surreptitious", "vicissitude", "zephyr", "vomit", "bird", "canteen", "follow", "nugget", "monkey", "google", "facebook", "instagram", "tarzan", "drink", "amazing", "business", "baby", "important", "homer", "peter", "amphibious", "bastard", "deoxyribonucleotide", "bioinformatics", "electrochemical", "xanthophyll"],
+	randH: function(getWord) {
+		var arrayLength = this.justWords.length;
+		var randy = Math.floor(Math.random() * arrayLength) + 0;
+		chosenHard = this.justWords[randy];
+		return chosenHard;
+	}
+
+
+	};
+
+
+
+function randomizer() {
+
+var pickit = wordy.randH();
+wordy.randH(pickit);
+var lines = pickit.length;
+var newWord = pickit.split("");
+
+console.log(pickit);
+console.log(lines);
+console.log(newWord[2]);
+
+
+for (i=0; i < lines; i++){
+	var newDiv = document.createElement("div");
+	var linez = document.createTextNode("_");
+	newDiv.appendChild(linez);
+
+	var putLine = document.getElementById("vurds");
+	document.body.appendChild(newDiv, putLine);
+};
+
+
+
+
+};
+
+
+
+
+
+  </script>
+
+<!-- var chars = "overpopulation".split('');
+If you just want to access a string in an array-like fashion, you can do that without split:
+
+var s = "overpopulation";
+for (var i = 0; i < s.length; i++) {
+    console.log(s.charAt(i));
+}
+ -->
+
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+<!-- /*
+
+pick a theme
+
+
+show instructions
+choose level (easy or hard)
+
+display lines(underscores) for each letter of a random word
+set a variable to length of word
+set a variable that counts wins
+display each wrong letter typed on screen
+put each letter of the word into seperate textboxes (use for loop) and make each of them visible=0
+
+
+
+have diff parts of hung man set to visible = 0
+var wrongAnswerVariable
+
+
+
+
+
+detect user's key event
+compare that letter to each of the letters in the selected random word
+	-- if keyed letter === letter in the word, make the letter in the box visible 
+		-- i++ a variable.... if that variable equals length of word then puzzle solved
+			--if also increase win variable by 1
+
+
+
+	--if keyed letter !=== a letter in the word, set a wrongAnswerVariable to i++
+		-- if that variable equals
+
+				if var = 1 show head 
+				if var = 2 show body
+				if var = 3 show R arm
+				if var = 4 show L arm
+				if var = 5 show R leg
+				if var = 6 show L leg
+
+
+After win or loss, game should restart with new word from selected mode (easy/hard)
+
+
+
+VARIABLES
+
+array of words (easy)
+array of words (hard)
+var length of word
+var wins
+var wrong letter
+
+ -->
+
+
+
+
+
+
+
+
+
+
