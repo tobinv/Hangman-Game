@@ -10,6 +10,8 @@
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
+<style>.num1 {background-color: purple;}   </style>
+
 </head>
 <body>
 
@@ -32,11 +34,11 @@
 
 			</div>
 
-<div class="row" style="height: 60px; border:solid 2px;">
+<div class="row" style="height: 60px;">
 					<div class="col-lg-2 text-center"> here's left side </div>
 					<div class="col-lg-8 text-center">  
 						
-						<div id="vurds" style="border: solid 1px red;"><span id="wordLines">LINES FOR WORD GO HERE</span></div>
+						<div id="vurds" style="border: solid 1px red;"><div id="wordLines"></div></div>
 
 					</div>
 					<div class="col-lg-2 text-center"> here's right side   </div>
@@ -78,18 +80,42 @@ wordy.randH(pickit);
 var lines = pickit.length;
 var newWord = pickit.split("");
 
-console.log(pickit);
+//console.log(pickit);
 console.log(lines);
-console.log(newWord[2]);
+console.log(newWord);
 
 
 for (i=0; i < lines; i++){
-	var newDiv = document.createElement("div");
-	var linez = document.createTextNode("_");
-	newDiv.appendChild(linez);
 
-	var putLine = document.getElementById("vurds");
-	document.body.appendChild(newDiv, putLine);
+
+	document.getElementsByTagName("SPAN")[i].className = (i);
+	var x = document.getElementsByTagName("SPAN")[i].className;
+	console.log(x);
+
+
+	var newDiv = document.createElement("span");
+	var linez = document.createTextNode("_ ");
+	newDiv.appendChild(linez);
+	
+
+	
+	
+	
+
+	var putLine = document.getElementById("wordLines");
+
+	document.getElementById("wordLines").appendChild(newDiv, putLine);
+	
+
+	
+
+
+
+
+
+
+
+
 };
 
 
@@ -103,7 +129,7 @@ for (i=0; i < lines; i++){
 
   </script>
 
-<!-- var chars = "overpopulation".split('');
+<!-- var chars = "overpopulation".split('');   _ _ _ _ _ _ _
 If you just want to access a string in an array-like fashion, you can do that without split:
 
 var s = "overpopulation";
