@@ -10,7 +10,7 @@
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<style>.num1 {background-color: purple;}   </style>
+<!-- <style>.num1 {background-color: purple;}   </style> -->
 
 </head>
 <body>
@@ -28,7 +28,7 @@
 					<div class="col-lg-2 text-center"> here's left side </div>
 					<div class="col-lg-8 text-center">
 						<!-- Here we have our button for generating random numbers (#random-button) -->
-					     <button id="random-button" class="btn btn-primary btn-lg" onclick="randomizer()"><span class="glyphicon glyphicon-hand-down"></span></button>
+					     <button id="random-button" class="btn btn-primary btn-lg" onclick="randomizer()"><div class="glyphicon glyphicon-hand-down"></div></button>
 					</div>
 					<div class="col-lg-2 text-center"> here's right side   </div>
 
@@ -97,7 +97,7 @@ for (i=0; i < lines2; i++){
 	
 
 
-	var newDiv = document.createElement("span");
+	var newDiv = document.createElement("SPAN");
 	var linez = document.createTextNode("_ ");
 	
 
@@ -105,8 +105,6 @@ for (i=0; i < lines2; i++){
 
 
 
-document.getElementsByTagName("SPAN")[i].className = ("num" + i);
-	var x = document.getElementsByTagName("SPAN")[i].className;
 
 
 
@@ -114,6 +112,12 @@ document.getElementsByTagName("SPAN")[i].className = ("num" + i);
 	var putLine = document.getElementById("wordLines");
 
 	document.getElementById("wordLines").appendChild(newDiv, putLine);
+
+
+	document.getElementsByTagName("SPAN")[i].className = ("num" + i);
+	var x = document.getElementsByTagName("SPAN")[i].className;
+
+
 	
 	console.log(x);
 
