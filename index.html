@@ -75,6 +75,9 @@ var wordy = {
 
 function randomizer() {
 
+clearSpans();
+
+
 var pickit = wordy.randH();
 wordy.randH(pickit);
 var lines = pickit.length;
@@ -84,6 +87,7 @@ var newWord = pickit.split("");
 console.log(lines);
 console.log(newWord);
 var lines2 = (lines);
+
 
 
 
@@ -121,14 +125,13 @@ for (i=0; i < lines2; i++){
 	
 	console.log(x);
 
-	
+
+};
 
 
-
-
-
-
-
+function clearSpans() {
+	var putLine = document.getElementById("wordLines");
+	putLine.innerHTML = "";
 
 };
 
