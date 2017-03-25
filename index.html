@@ -5,7 +5,7 @@
   <title>HANGMAN</title>
 
   <!-- Added link to the jQuery library -->
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  
 
   <!-- Added a link to Bootstrap-->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
@@ -83,29 +83,39 @@ var newWord = pickit.split("");
 //console.log(pickit);
 console.log(lines);
 console.log(newWord);
+var lines2 = (lines);
 
 
-for (i=0; i < lines; i++){
 
 
-	document.getElementsByTagName("SPAN")[i].className = (i);
-	var x = document.getElementsByTagName("SPAN")[i].className;
-	console.log(x);
+//creates a new span w/ underscore for each letter of random word chosen. & assigns a clss name to it
+
+for (i=0; i < lines2; i++){
+
+
+	
+	
 
 
 	var newDiv = document.createElement("span");
 	var linez = document.createTextNode("_ ");
-	newDiv.appendChild(linez);
 	
 
-	
-	
-	
+	newDiv.appendChild(linez);
+
+
+
+document.getElementsByTagName("SPAN")[i].className = ("num" + i);
+	var x = document.getElementsByTagName("SPAN")[i].className;
+
+
+
 
 	var putLine = document.getElementById("wordLines");
 
 	document.getElementById("wordLines").appendChild(newDiv, putLine);
 	
+	console.log(x);
 
 	
 
